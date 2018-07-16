@@ -11,7 +11,9 @@ git add .
 3.用命令git commit告诉Git，把文件提交到仓库：
 git commit -m "first commit"
 
-（如果提示：fatal: 远程 origin 已经存在。先删除远程 Git 仓库
+（如果提示：fatal: 远程 origin 已经存在。
+远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。
+先删除远程 Git 仓库
 git remote rm origin）
 
 4.根据GitHub的提示，在本地的learngit仓库下运行命令：
