@@ -1,3 +1,0 @@
-心中的四大金刚
-
--scala/java			akka		        play			...	mongodb-ruby/jruby/mirah		*			rails|sinatra	...	mongodb-javascript|coffeescript	nodejs 		express/socketio...	mongodb-erlang|elixir			mochiweb 	Frankie		...	mongodb
