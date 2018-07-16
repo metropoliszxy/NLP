@@ -1,7 +1,7 @@
 sleep 32m && rhythmbox /home/zhao/music/Yesterday.mp3
 
 
-Github提交
+Github初次提交：
 1.通过git init命令把这个目录变成Git可以管理的仓库
 git init
 
@@ -11,14 +11,27 @@ git add .
 3.用命令git commit告诉Git，把文件提交到仓库：
 git commit -m "first commit"
 
-(4.先删除远程 Git 仓库
-git remote rm origin)
+（如果提示：fatal: 远程 origin 已经存在。先删除远程 Git 仓库
+git remote rm origin）
 
-5.根据GitHub的提示，在本地的learngit仓库下运行命令：
+4.根据GitHub的提示，在本地的learngit仓库下运行命令：
 git remote add origin git@github.com:metropoliszxy/NLP.git
+)
 
-6.把本地库的所有内容推送到远程库上：
-git push -u origin master
+5.从现在起，只要本地作了提交，就可以通过命令：
+git push origin master
+
+
+之后提交：
+1.用命令git add告诉Git，把文件添加到仓库：
+git add .
+
+2.用命令git commit告诉Git，把文件提交到仓库：
+git commit -m "first commit"
+
+3.从现在起，只要本地作了提交，就可以通过命令：
+git push origin master
+
 
 
 从GitHub远程库克隆
