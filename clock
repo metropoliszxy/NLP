@@ -11,10 +11,13 @@ git add .
 3.用命令git commit告诉Git，把文件提交到仓库：
 git commit -m "first commit"
 
-4.根据GitHub的提示，在本地的learngit仓库下运行命令：
+(4.先删除远程 Git 仓库
+git remote rm origin)
+
+5.根据GitHub的提示，在本地的learngit仓库下运行命令：
 git remote add origin git@github.com:metropoliszxy/NLP.git
 
-5.把本地库的所有内容推送到远程库上：
+6.把本地库的所有内容推送到远程库上：
 git push -u origin master
 
 
