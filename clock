@@ -39,3 +39,5 @@ git push origin master
 从GitHub远程库克隆
 1.用命令git clone克隆一个本地库：
 git clone git@github.com:metropoliszxy/NLP.git
+
+
