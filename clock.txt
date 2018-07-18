@@ -1,6 +1,10 @@
-sleep 32m && rhythmbox /home/zhao/music/Yesterday.mp3
+﻿sleep 32m && rhythmbox /home/zhao/music/Yesterday.mp3
 
-my life
+Git安装后
+还需要最后一步设置，在命令行输入：
+$ git config --global user.name "metropoliszxy"
+$ git config --global user.email "zhaoxinye@nudt.edu.cn"
+
 
 Github初次提交：
 1.通过git init命令把这个目录变成Git可以管理的仓库
@@ -25,7 +29,7 @@ git remote add origin git@github.com:metropoliszxy/NLP.git
 git push origin master
 
 
-之后提交：
+之后提交或者下载（clone）后修改提交：
 1.用命令git add告诉Git，把文件添加到仓库：
 git add .
 
