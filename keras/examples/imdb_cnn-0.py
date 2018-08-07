@@ -28,6 +28,7 @@ print(len(x_train), 'train sequences')
 print(len(x_test), 'test sequences')
 
 print('Pad sequences (samples x time)')
+#maxlen设置最大的序列长度，长于该长度的序列将会截短，短于该长度的序列将会填充
 x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
 x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 print('x_train shape:', x_train.shape)
@@ -62,10 +63,22 @@ model.add(Activation('relu'))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
+#一旦你写好了网络之后，就可以用compile编译整个网络，看参数设置有没有问题
 model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
+print("The model is built.")
+#训练
+#   .fit的一些参数
+#   batch_size：对总的样本数进行分组，每组包含的样本数量
+#   epochs ：训练次数
+#   shuffle：是否把数据随机打乱之后再进行训练
+#   validation_split：拿出百分之多少用来做交叉验证
+#   verbose：屏显模式 0：不输出  1：输出进度  2：输出每次的训练结果
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
 validation_data=(x_test, y_test))
+
+#这个就是评估训练结果。
+#classes=model.predict(x_test,batch_size=128)
