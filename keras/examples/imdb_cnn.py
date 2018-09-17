@@ -56,6 +56,7 @@ print('x_train shape:', x_train.shape)
 print('x_test shape:', x_test.shape)
 
 
+
 #引入sequential，这个就是一个空的网络结构，并且这个结构是一个顺序的序列，
 #所以叫Sequential，Keras里面还有一些其他的网络结构。
 print('Build model...')
@@ -63,6 +64,7 @@ model = Sequential()
 
 # we start off with an efficient embedding layer which maps
 # our vocab indices into embedding_dims dimensions
+#max_features词汇量，每个句子maxlen长度，每个词用embedding_dims位向量表示
 model.add(Embedding(max_features,
                     embedding_dims,
                     input_length=maxlen))

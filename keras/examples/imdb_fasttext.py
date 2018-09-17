@@ -1,3 +1,6 @@
+#coding=utf-8
+#代码中包含中文，就需要在头部指定编码。
+
 '''This example demonstrates the use of fasttext for text classification
 
 Based on Joulin et al's paper:

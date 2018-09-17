@@ -1,3 +1,11 @@
 eclipse.preferences.version=1
+encoding/addition_rnn.py=utf-8
+encoding/bostonHousing_test.py=utf-8
 encoding/imdb_cnn.py=utf-8
+encoding/imdb_fasttext.py=utf-8
+encoding/imdb_lstm.py=utf-8
+encoding/imdb_test.py=utf-8
+encoding/mnist_acgan.py=utf-8
+encoding/mnist_cnn.py=utf-8
+encoding/preprocessing_test.py=utf-8
 encoding/reuters_mlp.py=utf-8

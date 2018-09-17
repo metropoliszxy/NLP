@@ -1,3 +1,6 @@
+#coding=utf-8
+#代码中包含中文，就需要在头部指定编码。
+
 '''Trains a simple convnet on the MNIST dataset.
 
 Gets to 99.25% test accuracy after 12 epochs
@@ -23,6 +26,11 @@ img_rows, img_cols = 28, 28
 # the data, split between train and test sets
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
+print("print x_train y_train before conversion.")
+print(x_train.shape)
+print(len(y_train))
+print(x_train.shape[0])
+
 if K.image_data_format() == 'channels_first':
     x_train = x_train.reshape(x_train.shape[0], 1, img_rows, img_cols)
     x_test = x_test.reshape(x_test.shape[0], 1, img_rows, img_cols)
@@ -32,6 +40,15 @@ else:
     x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
     input_shape = (img_rows, img_cols, 1)
 
+print("print x_train y_train after conversion.")
+print(x_train.shape)
+print(y_train)
+print(len(y_train))
+print(x_train[0].shape)
+print("\n")
+
+
+#转换数据类型
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 x_train /= 255
@@ -40,9 +57,17 @@ print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 
+#然后label做一个one-hot encoding处理，比如类别是3，那么变成[0, 0, 1 ,0, 0, 0, 0, 0, 0, 0]。
+print("print y_train before conversion.")
+print(y_train)
+print(y_train.shape)
 # convert class vectors to binary class matrices
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
+print("print y_train after conversion.")
+print(y_train)
+print(y_train.shape)
+
 
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3),
@@ -68,3 +93,9 @@ model.fit(x_train, y_train,
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+print("\n")
+
+
+
+'''
+'''

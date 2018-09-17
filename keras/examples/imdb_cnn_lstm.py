@@ -51,12 +51,22 @@ print('Build model...')
 
 model = Sequential()
 model.add(Embedding(max_features, embedding_size, input_length=maxlen))
+#为了避免过拟合在softmax 之前
+#添加Dropout 层，其思想是按照一定的概率屏蔽神经网络单元
 model.add(Dropout(0.25))
+#卷积层：卷积层通过指定不同的窗口值提取句子的不同的
+#特征信息。在卷积层通过卷积核来抽取句子的特征表示c，本
+#文设定卷积的上下文窗口的宽度为n，
 model.add(Conv1D(filters,
                  kernel_size,
                  padding='valid',
                  activation='relu',
                  strides=1))
+#MaxPooling1D池化层
+#为了提取特征映射中最重要的特征，卷积神经网
+#络对每一个特征映射抽取到的特征值，只取其中权重最大的作
+#为池化层的的保留值，其他的特征值全部舍弃。
+#pool_size：池化窗口大小
 model.add(MaxPooling1D(pool_size=pool_size))
 model.add(LSTM(lstm_output_size))
 model.add(Dense(1))
