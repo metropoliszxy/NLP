@@ -1,4 +1,4 @@
-﻿sleep 32m && rhythmbox /home/zhao/music/Yesterday.mp3
+﻿sleep 32m && rhythmbox /home/zhao/Music/CloudMusic/Yesterday.mp3
 
 Git安装后:
 
