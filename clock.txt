@@ -1,4 +1,16 @@
-﻿sleep 32m && rhythmbox /home/zhao/Music/CloudMusic/Yesterday.mp3
+﻿sleep 26m && rhythmbox /home/zhao/Music/CloudMusic/Yesterday.mp3
+
+监视显存:
+我们设置为每 10s 显示一次显存的情况
+watch -n 1 nvidia-smi
+
+
+挂载硬盘为只读，解决办法：
+sudo umount /dev/sda4
+sudo fuser -mk /dev/sda4
+sudo ntfsfix /dev/sda4
+sudo mount /dev/sda4 /media/zhao/WORK
+
 
 Git安装后:
 
